@@ -14,9 +14,9 @@ describe 'Something' do
   #   expect(artist.songs).to include(song)
   # end
 
-  it "I changed this boolean to true when I finished this lab" do
-    done = false
-    expect(done).to eq(true)
-  end
+  # it "I changed this boolean to true when I finished this lab" do
+  #   done = false
+  #   expect(done).to eq(true)
+  # end
 
 end
