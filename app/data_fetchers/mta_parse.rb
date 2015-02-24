@@ -12,14 +12,15 @@ class MTAParse
   #   #status updates
   # end
 
-  def stops
+  def stops(stopTimes)
     file_path = "google_transit/stops.csv"
-    CSV.foreach(File.path(file_path)) do |row|
+    CSV.open(File.path(file_path), "w") do |csv|
       binding.pry
       #for every row, index into the first element and third element
       #generate stop_id and stop_name from there
-      Station.create(Station.stop_id = row[0], Station.stop_name = row[2])
-      STATIONS << row[2]
+      csv << ["id", "line", "name"]
+        binding.pry
+        CSV.parse()
         #<---- logic for get_input methods ---->
           #subway stops
             #route.num_of_stops if row[2] != row[2]
