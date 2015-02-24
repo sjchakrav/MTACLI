@@ -30,7 +30,6 @@ class MtaCLI
     input = get_user_input
     print "Would you like to switch subway lines?"
     print "y[es]/ n[o]"
-    run ? input == "y" : "n"
     print "Enter your origin station: "
     #method call on origin match case iterating through stations array
     print "Enter your destination station: "
