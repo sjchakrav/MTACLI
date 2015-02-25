@@ -1,63 +1,74 @@
 class Line
 require 'pry'
+include GetUserInput
   STOPS = []
 
-  attr_accessor :station, :add_origin, :add_destination
-  attr_reader  :line_stop_num
+  attr_reader:station, :add_origin, :add_destination, :stations_available, :num_of_stops_in_between
 
-  def initialize
-    @station = station
-    @user = user
-    STOPS << self
-  end
+  # def initialize
+  #   @origin
+  #   @destination
+  #   @allstops
+  # end
 
-  def find_by_name(input)
-    #match case
-    input = MtaCLI.get_user_input
-    name = MTAParse.new
-    help = MtaCLI.help
-    #check the hash
-      #given the user's input check the keys
-        #if one of the keys match 
-      if input == name.keys(input)
-      elsif input != name.keys(input)
-        puts "You're an idiot."
-      elsif input == input(MtaCLI.help)
-        options
-      else
-        raise StandError
-      end
-    #from the hash
-  end
+  # def find_by_name
+  #  @sub_input = MTAcli.subway_input
+  # end
 
-  def self.list_of_stops
-    STOPS.count
-  end 
+  # def all_stops
+  #   @allstops = MTAcli.stations_available
+  # end
 
-  def number_of_stops_for_user
-    #difference between origin and destination
+  # def add_origin
+    
+  #   p rint "Enter the number associated with the station to input your origin.\n"
+  #   print "Enter your origin station: "
+  #   @origin = get_user_input.to_i
+  #   lines_available = MTAParse.new.stops   
+  # end
 
-  end
+  # def add_destination
+  #   @destination = MTAcli.user_destination
+  # end
 
+  # def num_of_stops_in_between
+  #   @numstops = MTAcli.number_of_stops
+  # end
 
-  def add_origin(origin)
-    subway_hash = MTAParse.new.stops.keys
-    subway_hash.each do |subway|
-      origin = MTACli.get_user_input
-      if origin == subway
-        STOPS << origin
-      else
-      end
-    end 
-  end
+  # def user_origin
+  #   print "Enter the number associated with the station to input your origin.\n"
+  #   print "Enter your origin station: "
+  #   @origin = get_user_input.to_i
+  #   lines_available = MTAParse.new.stops
+  # end
 
-  def add_destination(destination)
-    #defer get input
-  end
+  # def user_destination
+  #   print "Enter the number associated with the station to input your destination.\n"
+  #   print "Enter your destination station: "
+  #   @destination = MTAcli.get_user_input.to_i
+  # end
 
-  def num_of_stops_in_between
-    #dshow station num in hash
-  end
+  #  def number_of_stops
+  #   num_of_stops = @origin - @destination
+  #   print "\n"
+  #   print "The amount of stops in between your origin and destination are: "
+  #   print num_of_stops.abs
+  #   print "\n"
+  # end
+
+  # def lines_available
+  #   @lines_available = MTAParse.new.stops
+  #   puts lines_available.keys
+  #   puts "\n"
+  #   print "Enter a subway line: "
+  # end
+
+  # def stations_available
+  #   station_list = @lines_available[MTAcli.subway_input].each.with_index(1) do |station, i|
+  #       puts "#{i}: " + station[:platform]
+  #   end
+  # end
+
 
   
 end
