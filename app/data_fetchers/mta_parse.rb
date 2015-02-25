@@ -1,6 +1,7 @@
 require 'csv'
 require 'nokogiri'
 require 'open-uri'
+require 'set'
 
 class MTAParse
 
@@ -54,7 +55,6 @@ class MTAParse
       # #for the first index character of the string of stop_id, subway stop will be named
       #  LINES << row[0][0]
     end
-    binding.pry
   end
 
 # # { subway line [{stop1}],

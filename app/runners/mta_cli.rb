@@ -1,4 +1,4 @@
-class MtaCLI
+class MTAcli
 
   def call
 
@@ -25,9 +25,32 @@ class MtaCLI
     gets.chomp.strip
   end
 
+  def subway_input(user_input)
+    subway_stops = MTAParse.new.stops.keys
+     = get_user_input
+    subway_stops.each do |subway|
+      placeholder == user_input
+      subway[-1] = new_subway
+      puts subway['#{new_subway}']
+      binding.pry
+    end 
+  end
+
+  def platform_input(user_input)
+    platform_stops = MTAParse.new.stops
+    subway_input = get_user_input
+    platform_stops.each_with_index do |i, platform|
+
+      puts "#{i} "
+    end
+  end
+
+  def invalid
+    raise StandardError
+  end
+
   def run
     print "Enter a subway line: "
-    input = get_user_input
     print "Would you like to switch subway lines?"
     print "y[es]/ n[o]"
     print "Enter your origin station: "
@@ -45,14 +68,7 @@ class MtaCLI
   end
 
   def subway_line(input)
-    # search_term = input.split(" ")[0]
-    # puts "Your search term was #{search_term}, I am searching..."
-    # url = "https://twitter.com/search?q=#{search_term}&src=typd&f=realtime"
-    # tweet = ExampleScraper.new(url).example_method.sample
-    # puts "Thank you for your patience. I found this on Twitter:"
-    # puts tweet.example
-
-    #defer to this method every time user inputs a train line
+  
   end
 
   def help

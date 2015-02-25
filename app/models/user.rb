@@ -1,16 +1,26 @@
 class User
-	#route collects the amount of stops in between the
-	#origin and the destination
+
+	attr_accessor :origin, :destination, :line, :name
+	ORIGIN = []
 
 	def initialize
-		
+		@name = name		
 	end
 
-	def num_of_stops
+	def origin(start)
+		MTAcli.get_user_input(start)
+		subway_platforms = MTAParse.new.values
+		binding.pry
+		if start == #
+			ORIGIN << start
+		else
+			MTACli.invalid
+		end
+	end
+
+	def destination(fin)
+		MTACli.get_input(fin)
 
 	end
 
-	def approximate_time
-		#approximate_time
-	end
 end

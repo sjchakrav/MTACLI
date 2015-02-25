@@ -1,3 +1,3 @@
 require_relative '../config/environment'
 
-MtaCLI.new.call
+MTAcli.new.call

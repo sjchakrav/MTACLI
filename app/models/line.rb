@@ -1,35 +1,65 @@
 class Line
 require 'pry'
+  STOPS = []
 
-  SUBWAYS = []
-  attr_accessor :name, :add_destination
-  attr_reader :station_name, :line_stop_num, :train_status
+  attr_accessor :station, :add_origin, :add_destination
+  attr_reader  :line_stop_num
 
-
-
-  def name
-  	@name  
+  def initialize
+    @station = station
+    @user = user
+    STOPS << self
   end
 
-  def add_origin
+  def find_by_name(input)
+    #match case
+    input = MtaCLI.get_user_input
+    name = MTAParse.new
+    help = MtaCLI.help
+    #check the hash
+      #given the user's input check the keys
+        #if one of the keys match 
+      if input == name.keys(input)
+      elsif input != name.keys(input)
+        puts "You're an idiot."
+      elsif input == input(MtaCLI.help)
+        options
+      else
+        raise StandError
+      end
+    #from the hash
+  end
+
+  def self.list_of_stops
+    STOPS.count
+  end 
+
+  def number_of_stops_for_user
+    #difference between origin and destination
 
   end
 
-  def add_destination
 
+  def add_origin(origin)
+    subway_hash = MTAParse.new.stops.keys
+    subway_hash.each do |subway|
+      origin = MTACli.get_user_input
+      if origin == subway
+        STOPS << origin
+      else
+      end
+    end 
   end
 
-  def station_name
-
+  def add_destination(destination)
+    #defer get input
   end
 
-  def line_stop_num
-
+  def num_of_stops_in_between
+    #dshow station num in hash
   end
 
-  def train_status
-  	#nokogiri scrape of xml mta.info/status
-  end
+  
 end
 
 # data ={"Subway 1", [{:id=>"140S", :platform=>"South Ferry Loop"}]}
